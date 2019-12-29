@@ -3,9 +3,12 @@ package com.starbox.mypackage
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_waybill.*
 
 class WaybillActivity : AppCompatActivity() {
+
+    val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,9 +24,13 @@ class WaybillActivity : AppCompatActivity() {
             if(waybillNumber == "") {
                 Toast.makeText(this, "운송장 번호를 정확히 입력해주세요.", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, waybillNumber, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "추가되었습니다.", Toast.LENGTH_SHORT).show()
                 finish()
             }
         }
     }
+
+
+
+
 }
