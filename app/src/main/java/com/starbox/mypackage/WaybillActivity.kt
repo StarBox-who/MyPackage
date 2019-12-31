@@ -53,7 +53,7 @@ class WaybillActivity : AppCompatActivity() {
         val waybillNum = numberAddEdit.text.toString()
 
         val waybill = hashMapOf(
-            "waybill_number" to waybillNum
+            "number" to waybillNum
         )
 
         db.collection("users").document(user?.uid.toString()).collection("waybill").document()  //만약 정렬이 안되는 현상이 발생할 시 document 이름을 날짜로 해놓기
